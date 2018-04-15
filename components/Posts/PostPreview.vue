@@ -1,11 +1,11 @@
 <template lang="pug">
   div
     nuxt-link.post-preview(:to="'/posts/' + id")
-    article
-      .post-thumbnail(:style="{backgroundImage: `url(${thumbnail})`}")
-      .post-content
-        h1 {{ title }}
-        p {{ previewText }}
+      article
+        .post-thumbnail(:style="{backgroundImage: `url(${thumbnail})`}")
+        .post-content
+          h1 {{ title }}
+          p {{ previewText }}
 </template>
 
 <script>
