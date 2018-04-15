@@ -1,0 +1,20 @@
+{
+  "name": "nuxt-blog-exercise",
+  "version": "1.0.0",
+  "description": "My fabulous Nuxt.js project",
+  "author": "Konstantin BIFERT",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^1.0.0",
+    "element-ui": "^2.2.1"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1"
+  }
+}
