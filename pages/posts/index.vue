@@ -1,7 +1,18 @@
 <template lang="pug">
   .posts-page
-    h2 Awesome posts
+    post-list
 </template>
+
+<script>
+import PostList from '~/components/Posts/PostList'
+
+export default {
+  components: {
+    PostList
+  }
+}
+</script>
+
 
 <style scoped>
   .posts-page {
