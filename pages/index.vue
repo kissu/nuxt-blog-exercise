@@ -2,7 +2,7 @@
   .home-page
     section.intro
       h2 Tasty treats
-    post-list
+    post-list(:posts="loadedPosts")
 </template>
 
 <style scoped>
@@ -31,6 +31,14 @@
   export default {
     components: {
       PostList
+    },
+    data() {
+      return {
+        loadedPosts: [
+          { id: '1', title: 'huge title', previewText: 'read me pls', thumbnail: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20179.jpg'},
+          { id: '2', title: 'second post', previewText: 'read me pls', thumbnail: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20179.jpg'},
+        ]
+      }
     }
   }
 </script>

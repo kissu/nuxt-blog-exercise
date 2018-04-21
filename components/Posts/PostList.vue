@@ -1,24 +1,26 @@
 <template lang="pug">
   section.featured-posts
     post-preview(
-      id='1'
+      v-for="post in posts"
+      ,:key="post.id"
+      ,:id="post.id"
       /* the coma below is needed, https://github.com/vuejs/vue/issues/3231 */
       ,:is-admin="isAdmin"
-      thumbnail='https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20179.jpg'
-      title='First article'
-      previewText="This is my first blog post and I'm so glad, I want to thank...")
-    post-preview(
-      id='2',
-      :is-admin="isAdmin"
-      thumbnail='https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-604121.jpg'
-      title='Second one'
-      previewText="Let's do some awesome NodeJS stuff !")
-    post-preview(
-      id='3',
-      :is-admin="isAdmin"
-      thumbnail='https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-21.jpg'
-      title='Another one'
-      previewText="Fatality !")
+      ,:thumbnail="post.thumbnail"
+      ,:title="post.title"
+      ,:previewText="post.previewText")
+    //- post-preview(
+    //-   id='2',
+    //-   :is-admin="isAdmin"
+    //-   thumbnail='https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-604121.jpg'
+    //-   title='Second one'
+    //-   previewText="Let's do some awesome NodeJS stuff !")
+    //- post-preview(
+    //-   id='3',
+    //-   :is-admin="isAdmin"
+    //-   thumbnail='https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-21.jpg'
+    //-   title='Another one'
+    //-   previewText="Fatality !")
 </template>
 
 <script>
@@ -32,6 +34,10 @@ export default {
     isAdmin: {
       type: Boolean,
       default: false
+    },
+    posts: {
+      type: Array,
+      required: true
     }
   }
 }
