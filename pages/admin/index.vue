@@ -1,7 +1,7 @@
 <template lang="pug">
   .admin-page
     section.new-post
-      button(@click="$router.push('/admin/new-post')") Create post
+      app-button(@click="$router.push('/admin/new-post')") Create post
     section.existing-posts
       h1 Existing posts
       post-list(isAdmin)
@@ -9,10 +9,12 @@
 
 <script>
 import PostList from '@/components/Posts/PostList'
+import AppButton from '@/components/UI/AppButton'
 
 export default {
   components: {
-    PostList
+    PostList,
+    AppButton
   }
 }
 </script>
