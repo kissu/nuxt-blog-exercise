@@ -1,5 +1,5 @@
 <template lang="pug">
-  nuxt-link.post-preview(:to="'/posts/' + id")
+  nuxt-link.post-preview(:to="postLink")
     article
       .post-thumbnail(:style="{backgroundImage: `url(${thumbnail})`}")
       .post-content
@@ -26,8 +26,17 @@ export default {
     thumbnail: {
       type: String,
       required: true,
-    }
+    },
+    isAdmin: {
+      type: Boolean,
+      required: true
+    },
   },
+  computed: {
+    postLink() {
+      return this.isAdmin ? `/admin/${this.id}` : `/posts/${this.id}`
+    }
+  }
 }
 </script>
 

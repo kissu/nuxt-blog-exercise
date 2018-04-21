@@ -4,7 +4,7 @@
       button(@click="$router.push('/admin/new-post')") Create post
     section.existing-posts
       h1 Existing posts
-      post-list
+      post-list(isAdmin)
 </template>
 
 <script>

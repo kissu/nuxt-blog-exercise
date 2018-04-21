@@ -1,44 +1,32 @@
 <template lang="pug">
   .admin-new-post-page
     section.new-post-form
-      form(@submit.prevent="onSave")
-        app-control-input(v-model="editedPost.author") Author Name
-        app-control-input(v-model="editedPost.title") Title
-
-        app-control-input(v-model="editedPost.thumbnailLink") Thumbnail Link
-        app-control-input(control-type="textarea" v-model="editedPost.content") Content
-
-        app-button(type="submit") Save
-        app-button(type="button" style="margin-left: 10px" btn-style="cancel" @click="onCancel") Cancel
+      admin-post-form
 
 </template>
 
 <script>
-import AppControlInput from '@/components/UI/AppControlInput'
-import AppButton from '@/components/UI/AppButton'
+import AdminPostForm from '@/components/Admin/AdminPostForm'
 
 export default {
-  data() {
-    return {
-      editedPost: {
-        author: '',
-        title: '',
-        thumbnailLink: '',
-        content: ''
-      }
-    }
-  },
-  methods: {
-    onSave() {
-      console.log(this.editedPost)
-    },
-    onCancel() {
-      this.$router.push('/admin')
-    }
-  },
   components: {
-    AppControlInput,
-    AppButton
+    AdminPostForm,
   }
 }
 </script>
+
+<style scoped>
+  .admin-page {
+    padding: 20px;
+  }
+
+  .new-post {
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+  }
+
+  .existing-posts h1 {
+    text-align: center;
+  }
+</style>
