@@ -1,7 +1,7 @@
 <template lang='pug'>
   div
-    TheHeader(@sidenavToggle="displaySidenav = !displaySidenav")
-    TheSidenav(:show="displaySidenav" @close="displaySidenav = false")
+    the-header(@sidenavToggle="displaySidenav = !displaySidenav")
+    the-sidenav(:show="displaySidenav" @close="displaySidenav = false")
     nuxt
 </template>
 
