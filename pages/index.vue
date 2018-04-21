@@ -1,5 +1,8 @@
 <template lang="pug">
   .home-page
+    section.intro
+      h2 Tasty treats
+    post-list
 </template>
 
 <style scoped>
@@ -23,6 +26,11 @@
 </style>
 
 <script>
+  import PostList from '@/components/Posts/PostList'
+
   export default {
+    components: {
+      PostList
+    }
   }
 </script>
