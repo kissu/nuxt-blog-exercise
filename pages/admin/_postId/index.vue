@@ -2,7 +2,6 @@
   .admin-post-page
     section.update-form
       admin-post-form(:post="loadedPost")
-
 </template>
 
 <script>
@@ -15,6 +14,7 @@ export default {
   },
   data() {
     return {
+      // yep, need to make this one dynamic one day xD
       loadedPost: {
         author: 'Maximilian',
         title: 'My awesome post',
