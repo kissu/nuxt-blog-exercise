@@ -9,18 +9,18 @@
       ,:thumbnail="post.thumbnail"
       ,:title="post.title"
       ,:previewText="post.previewText")
-    //- post-preview(
-    //-   id='2',
-    //-   :is-admin="isAdmin"
-    //-   thumbnail='https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-604121.jpg'
-    //-   title='Second one'
-    //-   previewText="Let's do some awesome NodeJS stuff !")
-    //- post-preview(
-    //-   id='3',
-    //-   :is-admin="isAdmin"
-    //-   thumbnail='https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-21.jpg'
-    //-   title='Another one'
-    //-   previewText="Fatality !")
+    post-preview(
+      id='2',
+      :is-admin="isAdmin"
+      thumbnail='https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-604121.jpg'
+      title='Second one'
+      previewText="Let's do some awesome NodeJS stuff !")
+    post-preview(
+      id='3',
+      :is-admin="isAdmin"
+      thumbnail='https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-21.jpg'
+      title='Another one'
+      previewText="Fatality !")
 </template>
 
 <script>

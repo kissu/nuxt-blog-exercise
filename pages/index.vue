@@ -48,13 +48,13 @@
     //     ]
     //   }
     // },
-    created() {
-      setTimeout(() => {
-        this.loadedPosts = [
-          { id: '1', title: 'huge title', previewText: 'read me pls', thumbnail: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20179.jpg'},
-          { id: '2', title: 'second post', previewText: 'read me pls', thumbnail: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20179.jpg'},
-        ]
-      }, 1500)
-    }
+    // created() {
+    //   setTimeout(() => {
+    //     this.loadedPosts = [
+    //       { id: '1', title: 'huge title', previewText: 'read me pls', thumbnail: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20179.jpg'},
+    //       { id: '2', title: 'second post', previewText: 'read me pls', thumbnail: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20179.jpg'},
+    //     ]
+    //   }, 1500)
+    // }
   }
 </script>

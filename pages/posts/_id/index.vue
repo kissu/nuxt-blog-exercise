@@ -1,14 +1,34 @@
 <template lang="pug">
   .single-post-page
     section.post
-      h1.post-title Title
+      h1.post-title {{ loadedPost.title }}
       .post-details
-        .post-detail Last updated on
-        .post-detail Written by
-      p Content of the post
+        .post-detail Updated at {{ loadedPost.updatedDate }}
+        .post-detail Written by {{ loadedPost.author }}
+      p {{ loadedPost.content }}
     section.post-feedback
       p Send me some random feedback pls
 </template>
+
+<script>
+export default {
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPost: {
+          id: '1',
+          title: `huge title ID: ${context.params.id}`,
+          autor: 'me',
+          updatedDate: new Date(),
+          content: 'This is some awesome temp content',
+          previewText: 'read me pls',
+          thumbnail: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20179.jpg'}
+      })
+    }, 1000);
+  }
+}
+</script>
+
 
 <style scoped>
   .single-post-page {
