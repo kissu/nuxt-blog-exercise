@@ -39,7 +39,8 @@ export default {
       type: Array,
       required: true
     }
-  }
+  },
+  props: ['posts'],
 }
 </script>
 
