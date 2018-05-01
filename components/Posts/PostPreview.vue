@@ -15,6 +15,14 @@ export default {
       type: String,
       required: true,
     },
+    isAdmin: {
+      type: Boolean,
+      required: true
+    },
+    thumbnail: {
+      type: String,
+      required: true,
+    },
     title: {
       type: String,
       required: true,
@@ -22,14 +30,6 @@ export default {
     previewText: {
       type: String,
       required: true,
-    },
-    thumbnail: {
-      type: String,
-      required: true,
-    },
-    isAdmin: {
-      type: Boolean,
-      required: true
     },
   },
   computed: {

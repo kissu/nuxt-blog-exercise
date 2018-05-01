@@ -26,35 +26,16 @@
 </style>
 
 <script>
-  import PostList from '@/components/Posts/PostList'
+import PostList from "@/components/Posts/PostList";
 
-  export default {
-    components: {
-      PostList
-    },
-    asyncData (context, callback) {
-      setTimeout(() => {
-        callback(null, {
-          loadedPosts: [
-            { id: '1', title: 'huge title', previewText: 'read me pls', thumbnail: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20179.jpg'},
-            { id: '2', title: 'second post', previewText: 'read me pls', thumbnail: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20179.jpg'},
-          ]
-        })
-      }, 1500)
-    },
-    // data() {
-    //   return {
-    //     loadedPosts: [
-    //     ]
-    //   }
-    // },
-    // created() {
-    //   setTimeout(() => {
-    //     this.loadedPosts = [
-    //       { id: '1', title: 'huge title', previewText: 'read me pls', thumbnail: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20179.jpg'},
-    //       { id: '2', title: 'second post', previewText: 'read me pls', thumbnail: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20179.jpg'},
-    //     ]
-    //   }, 1500)
-    // }
+export default {
+  components: {
+    PostList
+  },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
   }
+};
 </script>

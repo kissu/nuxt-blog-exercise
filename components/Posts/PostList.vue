@@ -2,25 +2,13 @@
   section.featured-posts
     post-preview(
       v-for="post in posts"
+      /* the coma below is needed, https://github.com/vuejs/vue/issues/3231 */
       ,:key="post.id"
       ,:id="post.id"
-      /* the coma below is needed, https://github.com/vuejs/vue/issues/3231 */
       ,:is-admin="isAdmin"
       ,:thumbnail="post.thumbnail"
       ,:title="post.title"
       ,:previewText="post.previewText")
-    post-preview(
-      id='2',
-      :is-admin="isAdmin"
-      thumbnail='https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-604121.jpg'
-      title='Second one'
-      previewText="Let's do some awesome NodeJS stuff !")
-    post-preview(
-      id='3',
-      :is-admin="isAdmin"
-      thumbnail='https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-21.jpg'
-      title='Another one'
-      previewText="Fatality !")
 </template>
 
 <script>
@@ -39,8 +27,7 @@ export default {
       type: Array,
       required: true
     }
-  },
-  props: ['posts'],
+  }
 }
 </script>
 
