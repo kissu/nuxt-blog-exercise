@@ -4,7 +4,7 @@
       app-button(@click="$router.push('/admin/new-post')") Create post
     section.existing-posts
       h1 Existing posts
-      post-list(isAdmin)
+      post-list(isAdmin, :posts="loadedPosts")
 </template>
 
 <script>
@@ -16,6 +16,11 @@ export default {
   components: {
     PostList,
     AppButton
+  },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
   }
 }
 </script>

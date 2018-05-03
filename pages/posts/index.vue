@@ -4,18 +4,20 @@
 </template>
 
 <script>
-import PostList from "@/components/Posts/PostList";
+import PostList from "@/components/Posts/PostList"
+import axios from 'axios'
 
 export default {
-  components: {
-    PostList
-  },
-  computed: {
-    loadedPosts() {
-      return this.$store.getters.loadedPosts
-    }
+  asyncData(context) {
+    return axios.get(`https://learn-nuxt-6a97b.firebaseio.com/posts/${context.params.id}.json`)
+                .then(res => {
+                  return {
+                    loadedPost: res.data
+                  }
+                })
+                .catch(e => context.error(e))
   }
-};
+}
 </script>
 
 

@@ -15,8 +15,10 @@ export default {
   },
   methods: {
     onSubmitted(postData) {
-      axios.post('https://learn-nuxt-6a97b.firebaseio.com/posts.json', postData)
-            .then(result => console.log(result))
+      axios.post('https://learn-nuxt-6a97b.firebaseio.com/posts.json', {...postData, updatedDate: new Date()})
+            .then(res => {
+              this.$router.push('/admin')
+            })
             .catch(e => console.log(e))
     }
   }
