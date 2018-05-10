@@ -45,8 +45,12 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios',
   ],
 
+  env: {
+    fbAPIKey: 'AIzaSyBNf7ps0lJPoKoOFRJBLEy15AZafdxQ_IM',
+  },
   /*
   ** Build configuration
   */
