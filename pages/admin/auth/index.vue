@@ -25,17 +25,13 @@ export default {
   },
   methods: {
     onSubmit() {
-      let defaultAuthUrl = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${process.env.fbAPIKey}`
-      if (!this.login) {
-        defaultAuthUrl = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${process.env.fbAPIKey}`
-      }
-      this.$axios.$post(defaultAuthUrl, {
+      this.$store.dispatch('authenticateUser', {
+        isLogin: this.isLogin,
         email: this.email,
         password: this.password,
-        secureSecureToken: true,
-      }).then(result => {
-        console.log(result)
-      }).catch(e => console.log(e))
+      }).then(() => {
+        this.$router.push('/admin')
+      })
     }
   }
 }
