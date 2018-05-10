@@ -73,6 +73,8 @@ const createStore = () => {
           returnSecureToken: true,
         }).then(result => {
           vuexContext.commit('setToken', result.idToken)
+          localStorage.setItem('token', result.idToken)
+          localStorage.setItem('tokenExpiration', new Date().getTime() + result.expiresIn * 1000)
           vuexContext.dispatch('setLogoutTimer', result.expiresIn * 1000)
         }).catch(e => console.log(e))
       },
@@ -80,6 +82,19 @@ const createStore = () => {
         setTimeout(() => {
           vuexContent.commit('clearToken')
         }, duration)
+      },
+      initAuth() {
+        const token = localStorage.getItem('token')
+        const expirationDate = localStorage.getItem('tokenExpiration')
+
+        if (!token || new Date().getTime() > +expirationDate) {
+          // check if the current date is past the date at which the token expires
+          // + apparently converts expirationDate to a number ???
+          return
+        }
+        vuexContent.dispatch('setLogoutTimer', +expirationDate - new Date().getTime())
+        // .getTime() is to get the current timestamp
+        vuexContent.commit('setToken', token)
       },
     },
     getters: {
