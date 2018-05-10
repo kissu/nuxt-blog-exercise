@@ -1,9 +1,9 @@
 <template lang='pug'>
   .admin-auth-page
     .auth-container
-      form
-        app-control-input(type="email") E-Mail Address
-        app-control-input(type="password") Password
+      form(@submit.prevent="onSubmit")
+        app-control-input(type="email" v-model="email") E-Mail Address
+        app-control-input(type="password" v-model="password") Password
         app-button(type="submit") {{ isLogin ? 'Login' : 'Sign Up' }}
         app-button(
           type="button"
@@ -18,7 +18,20 @@ export default {
   layout: 'admin',
   data() {
     return {
-      isLogin: true
+      isLogin: true,
+      email: '',
+      password: '',
+    }
+  },
+  methods: {
+    onSubmit() {
+      this.$axios.$post(`https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${process.env.fbAPIKey}`, {
+        email: this.email,
+        password: this.password,
+        secureSecureToken: true,
+      }).then(result => {
+        console.log(result)
+      }).catch(e => console.log(e))
     }
   }
 }
