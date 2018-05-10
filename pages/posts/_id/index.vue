@@ -3,7 +3,7 @@
     section.post
       h1.post-title {{ loadedPost.title }}
       .post-details
-        .post-detail Updated at {{ loadedPost.updatedDate }}
+        .post-detail Updated at {{ loadedPost.updatedDate | date }}
         .post-detail Written by {{ loadedPost.author }}
       p {{ loadedPost.content }}
     section.post-feedback

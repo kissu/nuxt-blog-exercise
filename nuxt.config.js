@@ -37,6 +37,7 @@ module.exports = {
   */
   plugins: [
     '~plugins/core-components.js',
+    '~plugins/date-filter.js',
     '@/plugins/element-ui',
   ],
 
