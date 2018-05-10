@@ -22,13 +22,14 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#FFFFFF' },
+  loading: { color: '#00cec9' },
 
   /*
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    '~assets/styles/main.css',
+    'element-ui/lib/theme-chalk/index.css',
   ],
 
   /*
@@ -53,6 +54,10 @@ module.exports = {
     */
     extend(config, ctx) {
 
-    }
+    },
+  },
+  transition: {
+    name: 'fade',
+    mode: 'out-in',
   }
 }
