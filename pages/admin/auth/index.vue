@@ -25,7 +25,11 @@ export default {
   },
   methods: {
     onSubmit() {
-      this.$axios.$post(`https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${process.env.fbAPIKey}`, {
+      let defaultAuthUrl = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${process.env.fbAPIKey}`
+      if (!this.login) {
+        defaultAuthUrl = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${process.env.fbAPIKey}`
+      }
+      this.$axios.$post(defaultAuthUrl, {
         email: this.email,
         password: this.password,
         secureSecureToken: true,
