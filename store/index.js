@@ -43,14 +43,14 @@ const createStore = () => {
           updatedDate: new Date()
         }
         return axios
-          .post("https://learn-nuxt-6a97b.firebaseio.com/posts.json", createdPost)
+          .post(`https://learn-nuxt-6a97b.firebaseio.com/posts.json?auth=${vuexContext.state.token}`, createdPost)
           .then(result => {
             vuexContext.commit('addPost', { ...createdPost, id: result.data.name })
           })
           .catch(e => console.log(e));
       },
       editPost(vuexContext, editedPost) {
-        return axios.put(`https://learn-nuxt-6a97b.firebaseio.com/posts/${editedPost.id}.json`, editedPost)
+        return axios.put(`https://learn-nuxt-6a97b.firebaseio.com/posts/${editedPost.id}.json?auth=${vuexContext.state.token}`, editedPost)
           .then(res => {
             vuexContext.commit('editPost', editedPost)
           })
@@ -67,7 +67,7 @@ const createStore = () => {
         return this.$axios.$post(defaultAuthUrl, {
           email: authData.email,
           password: authData.password,
-          secureSecureToken: true,
+          returnSecureToken: true,
         }).then(result => {
           vuexContext.commit('setToken', result.idToken)
         }).catch(e => console.log(e))
