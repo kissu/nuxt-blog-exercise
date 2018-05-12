@@ -12,23 +12,19 @@
 
 <script>
 export default {
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPost: {
-          id: "1",
-          title: `First Post (ID: ${context.route.params.id})`,
-          previewText: "This is our first post!",
-          author: 'Maximilian',
-          updatedDate: new Date(),
-          content: 'Some dummy text which is definitely not the preview text though!',
-          thumbnail:
-            "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-604121.jpg"
+  asyncData(context) {
+    return context.app.$axios.$get(`/posts/${context.params.id}.json`)
+      .then(data => {
+        return {
+          loadedPost: data
         }
-      });
-    }, 10); // eh, this timeout is annoying... xD
-  }
-};
+      })
+      .catch(e => context.error(e))
+  },
+  head: {
+    title: 'A Blog Post'
+  },
+}
 </script>
 
 
