@@ -1,10 +1,11 @@
 <template lang="pug">
   nuxt-link.post-preview(:to="postLink")
     article
-      .post-thumbnail(:style="{backgroundImage: `url(${thumbnail})`}")
-      .post-content
-        h1 {{ title }}
-        p {{ previewText }}
+      div
+        .post-thumbnail(:style="{backgroundImage: `url(${thumbnail})`}")
+        .post-content
+          h1 {{ title }}
+          p {{ previewText }}
 </template>
 
 <script>
@@ -19,10 +20,6 @@ export default {
       type: Boolean,
       required: true
     },
-    thumbnail: {
-      type: String,
-      required: true,
-    },
     title: {
       type: String,
       required: true,
@@ -31,6 +28,10 @@ export default {
       type: String,
       required: true,
     },
+    thumbnail: {
+      type: String,
+      required: true,
+    }
   },
   computed: {
     postLink() {

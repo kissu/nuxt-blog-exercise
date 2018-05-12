@@ -47,8 +47,14 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
   ],
+  axios: {
+    baseURL: process.env.BASE_URL || 'https://learn-nuxt-6a97b.firebaseio.com/',
+    credentials: false,
+  },
+
 
   env: {
+    baseURL: process.env.BASE_URL || 'https://learn-nuxt-6a97b.firebaseio.com/',
     fbAPIKey: 'AIzaSyBNf7ps0lJPoKoOFRJBLEy15AZafdxQ_IM',
   },
   /*

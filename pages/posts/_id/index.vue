@@ -26,7 +26,7 @@ export default {
             "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-604121.jpg"
         }
       });
-    }, 1000); // eh, this timeout is annoying... xD
+    }, 10); // eh, this timeout is annoying... xD
   }
 };
 </script>
