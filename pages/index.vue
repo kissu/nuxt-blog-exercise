@@ -1,7 +1,7 @@
 <template lang="pug">
   .home-page
     section.intro
-      h2 Tasty treats
+      h2 Wanna feel hot ? :3
     post-list(:posts="loadedPosts")
 </template>
 
