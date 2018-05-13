@@ -4,9 +4,6 @@
 </template>
 
 <script>
-import PostList from "@/components/Posts/PostList"
-import axios from 'axios'
-
 export default {
   computed: {
     loadedPosts() {
@@ -15,7 +12,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
   .posts-page {

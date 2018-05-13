@@ -1,13 +1,13 @@
 <template lang="pug">
   .single-post-page
     section.post
+      img(:src='loadedPost.thumbnail', alt='your beloved servant', width='300', height='169')
       h1.post-title {{ loadedPost.title }}
       .post-details
         .post-detail Updated at {{ loadedPost.updatedDate | date }}
         .post-detail Written by {{ loadedPost.author }}
       p {{ loadedPost.content }}
     section.post-feedback
-      p Send me some random feedback pls
 </template>
 
 <script>
@@ -21,8 +21,10 @@ export default {
       })
       .catch(e => context.error(e))
   },
-  head: {
-    title: 'A Blog Post'
+  head() {
+    return {
+      title: `Profile of ${this.loadedPost.author}`,
+    }
   },
 }
 </script>
