@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const axios = require('axios')
 
 module.exports = {
   mode: 'universal',
@@ -69,5 +70,18 @@ module.exports = {
   transition: {
     name: 'fade',
     mode: 'out-in',
+  },
+  generate: {
+    routes: function() {
+      return axios.get('https://learn-nuxt-6a97b.firebaseio.com/posts.json')
+        // write the var with the local var above kinda doesn't work ?
+        .then(res => {
+          const routes = []
+          for (const key in res.data) {
+            routes.push(`/posts/${key}`)
+          }
+          return routes
+        })
+    }
   }
 }
