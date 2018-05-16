@@ -11,6 +11,8 @@ The aim at the start was to make a blog but it went to some maniac crazy **KITTI
 ### How is the current website looking
 ![current website](https://i.imgur.com/UlSgrGN.png 'Meow, we bite !')
 
+![border](https://i.imgur.com/ATZBCB1.png)
+
 ### Todo list
 - [x] make some basic views
 - [x] refacto the views
@@ -19,4 +21,5 @@ The aim at the start was to make a blog but it went to some maniac crazy **KITTI
 - [x] deploy to the *awesome* Netlify ~even if it doesn't handle universal apps~
 - [ ] deploy to Heroku and see if it suits the CRUD updates better (`npm run generate && start`)
 - [ ] try to [PWA](https://github.com/nuxt-community/pwa-module) the current app
+- [ ] test some interesting [modules](https://github.com/nuxt-community/awesome-nuxt)
 - [ ] see if we can reach 100% audits ?
